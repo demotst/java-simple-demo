@@ -17,7 +17,45 @@
     <properties>
         <java.version>8</java.version>
     </properties>
+         
+    <!-- 仓库 -->
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>Central Repository</name>
+            <url>http://10.142.233.181:8082/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>spring-libs-milestone</id>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
+    <!-- 插件仓库 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>Central Repository</name>
+            <url>http://10.142.233.181:8082/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Internal Releases</name>
+            <url>http://10.142.233.181:8082/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Internal Snapshots</name>
+            <url>http://10.142.233.181:8082/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+         
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
