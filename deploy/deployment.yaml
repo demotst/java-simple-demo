@@ -6,11 +6,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "simple-backend"
+      # deployment.metadata.neme
+      name: "simple-backend"
   template:
     metadata:
       labels:
+        # deployment.metadata.neme
+        name: "simple-backend"
+        # serviceMesh need: app version
         app: "simple-backend"
+        version: ""
     spec:
       containers:
         - image: "{{ DEPLOY_IMAGE }}"
